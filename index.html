@@ -224,23 +224,18 @@
       transform: translateY(-2px);
     }
 
-    /* smaller secondary buttons in hero */
-    .hero-secondary-links {
-      display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;
+    /* secondary small buttons */
+    .btn-sm {
+      padding: 0.5rem 1rem;
+      font-size: 0.8rem;
+      font-weight: 500;
+    }
+
+    .hero-secondary {
+      display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap;
       margin-top: 1rem;
       animation: fadeDown 0.6s 0.45s ease both;
     }
-
-    .hero-secondary-links a {
-      color: var(--muted);
-      text-decoration: none;
-      font-size: 0.8rem;
-      font-weight: 500;
-      display: inline-flex; align-items: center; gap: 0.35rem;
-      transition: color 0.2s;
-    }
-
-    .hero-secondary-links a:hover { color: var(--accent2); }
 
     .hero-stats {
       display: flex; gap: 2.5rem; justify-content: center; flex-wrap: wrap;
@@ -290,13 +285,8 @@
 
     .section-desc { color: var(--muted); max-width: 560px; }
 
-    .section-divider {
-      border: none;
-      border-top: 1px solid var(--border);
-    }
-
     /* ── PROJECTS ── */
-    #projects { background: var(--bg); }
+    #projects { background: var(--bg2); }
 
     .projects-grid {
       display: grid;
@@ -432,17 +422,16 @@
       color: var(--accent2);
     }
 
-    /* dissertation note */
     .project-note {
       font-size: 0.75rem;
       color: var(--muted);
       font-style: italic;
       margin-top: 0.5rem;
-      padding-left: 0.25rem;
+      opacity: 0.8;
     }
 
     /* ── EXPERIENCE ── */
-    #experience { background: var(--bg2); }
+    #experience { background: var(--bg); }
 
     .timeline {
       margin-top: 3rem;
@@ -467,7 +456,7 @@
       width: 18px; height: 18px;
       border-radius: 50%;
       background: var(--accent);
-      border: 3px solid var(--bg2);
+      border: 3px solid var(--bg);
       box-shadow: 0 0 12px rgba(124,58,237,0.4);
     }
 
@@ -525,7 +514,7 @@
     }
 
     /* ── EDUCATION ── */
-    #education { background: var(--bg); }
+    #education { background: var(--bg2); }
 
     .edu-grid {
       display: grid;
@@ -582,14 +571,14 @@
 
     /* ── CERTIFICATIONS (de-emphasized) ── */
     .certs-inline {
-      display: flex; flex-wrap: wrap; gap: 0.6rem;
+      display: flex; flex-wrap: wrap; gap: 0.5rem;
       margin-top: 1.5rem;
     }
 
-    .cert-small {
+    .cert-mini {
       font-family: 'Fira Code', monospace;
-      font-size: 0.68rem;
-      padding: 0.25rem 0.55rem;
+      font-size: 0.7rem;
+      padding: 0.25rem 0.6rem;
       border-radius: 4px;
       background: var(--bg3);
       border: 1px solid var(--border);
@@ -597,114 +586,76 @@
       transition: all 0.2s;
     }
 
-    .cert-small:hover { border-color: var(--accent2); color: var(--accent2); }
+    .cert-mini:hover {
+      border-color: var(--accent2);
+      color: var(--accent2);
+    }
 
     /* ── CONTACT ── */
-    #contact { background: var(--bg2); }
+    #contact { background: var(--bg); }
 
-    .contact-wrapper {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3rem;
+    .contact-content {
       margin-top: 3rem;
-      align-items: start;
+      text-align: center;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
-    .contact-info h3 {
-      font-size: 1.5rem; font-weight: 700;
-      margin-bottom: 0.75rem;
-    }
-
-    .contact-info p { color: var(--muted); margin-bottom: 1.5rem; }
-
-    /* primary contact link */
     .contact-primary {
-      display: flex; align-items: center; gap: 0.75rem;
-      padding: 1rem 1.25rem;
-      background: linear-gradient(135deg, rgba(124,58,237,0.1), rgba(6,182,212,0.05));
-      border: 1px solid rgba(124,58,237,0.3);
-      border-radius: 10px;
+      margin-bottom: 2rem;
+    }
+
+    .contact-primary a {
+      display: inline-flex; align-items: center; gap: 0.75rem;
+      padding: 1rem 2.5rem;
+      background: linear-gradient(135deg, var(--accent), #6d28d9);
+      color: #fff;
       text-decoration: none;
-      color: var(--text);
-      font-size: 0.95rem;
+      border-radius: 10px;
+      font-size: 1rem;
       font-weight: 600;
       transition: all 0.2s;
-      margin-bottom: 1.25rem;
+      box-shadow: 0 0 24px rgba(124,58,237,0.3);
     }
 
-    .contact-primary:hover {
-      border-color: var(--accent);
-      transform: translateX(4px);
-      box-shadow: 0 4px 16px rgba(124,58,237,0.15);
+    .contact-primary a:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 36px rgba(124,58,237,0.5);
     }
 
-    .contact-primary i { color: var(--accent); font-size: 1.1rem; }
-
-    /* secondary contact icons */
     .contact-secondary {
-      display: flex; gap: 0.75rem; flex-wrap: wrap;
+      display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;
+      margin-top: 1.5rem;
     }
 
-    .contact-icon-link {
+    .contact-icon {
       display: flex; align-items: center; justify-content: center;
-      width: 42px; height: 42px;
-      border-radius: 8px;
+      width: 44px; height: 44px;
+      border-radius: 10px;
       background: var(--card);
       border: 1px solid var(--border);
       text-decoration: none;
       color: var(--muted);
-      font-size: 1rem;
+      font-size: 1.1rem;
       transition: all 0.2s;
     }
 
-    .contact-icon-link:hover {
-      border-color: var(--accent2);
-      color: var(--accent2);
+    .contact-icon:hover {
+      border-color: var(--accent);
+      color: var(--accent);
       transform: translateY(-2px);
     }
 
-    .contact-form {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 2rem;
-    }
-
-    .form-group { margin-bottom: 1.25rem; }
-
-    .form-group label {
-      display: block;
-      font-size: 0.8rem; font-weight: 600;
+    .contact-note {
+      margin-top: 1.5rem;
+      font-size: 0.85rem;
       color: var(--muted);
-      margin-bottom: 0.4rem;
-      letter-spacing: 0.03em;
     }
-
-    .form-group input,
-    .form-group textarea {
-      width: 100%;
-      background: var(--bg3);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 0.75rem 1rem;
-      color: var(--text);
-      font-family: 'Inter', sans-serif;
-      font-size: 0.875rem;
-      transition: border-color 0.2s;
-      outline: none;
-      resize: vertical;
-    }
-
-    .form-group input:focus,
-    .form-group textarea:focus {
-      border-color: var(--accent);
-    }
-
-    .form-group textarea { min-height: 120px; }
 
     /* ── FOOTER ── */
     footer {
-      background: var(--bg);
+      background: var(--bg2);
       border-top: 1px solid var(--border);
       padding: 2rem;
       text-align: center;
@@ -738,7 +689,6 @@
       }
       .hamburger { display: flex; }
 
-      .contact-wrapper { grid-template-columns: 1fr; }
       .project-card.featured { grid-column: auto; }
       .hero-stats { gap: 1.5rem; }
     }
@@ -746,9 +696,7 @@
 </head>
 <body>
 
-<!-- ══════════════════════════════════════════════════════════
-     NAV — Skills link removed, Projects comes first
-     ══════════════════════════════════════════════════════════ -->
+<!-- ══ NAV (Skills removed, Projects first) ══ -->
 <nav>
   <div class="nav-logo">jiya<span>.dev</span></div>
   <ul class="nav-links" id="navLinks">
@@ -763,15 +711,12 @@
   </div>
 </nav>
 
-<!-- ══════════════════════════════════════════════════════════
-     HERO — "Aspiring" removed, Live Demo is dominant CTA,
-     GitHub/Email/Resume demoted to secondary text links
-     ══════════════════════════════════════════════════════════ -->
+<!-- ══ HERO (Aspiring removed, single dominant CTA, resume added) ══ -->
 <section class="hero" id="about">
   <div class="hero-content">
     <div class="hero-badge">
       <div class="status-dot"></div>
-      Open to AI/ML engineering roles
+      Available for AI/ML engineering roles
     </div>
 
     <h1>
@@ -783,32 +728,29 @@
     <p class="hero-summary">
       I build end-to-end production ML systems.
       Fine-tuned transformer models achieving <strong style="color:var(--text)">0.89 macro F1</strong>,
-      architected multi-agent AI platforms with async orchestration, and established CI/CD pipelines with
+      built multi-agent AI platforms with async orchestration, and established CI/CD pipelines with
       <strong style="color:var(--text)">74% test coverage</strong>.
-      MSc IT (AI/ML) · First Class Honours BSc Computing.
+      MSc IT (AI/ML) from Leeds Beckett University.
     </p>
 
-    <!-- ONE dominant CTA -->
+    <!-- PRIMARY CTA: One dominant action -->
     <div class="hero-btns">
       <a href="https://huggingface.co/spaces/YDVJIYA/mental-health-ai-platform"
          target="_blank" class="btn btn-primary">
-        <i class="fas fa-rocket"></i> View Live Demo — Mental Health AI Platform
+        <i class="fas fa-rocket"></i> View Live Demo — Featured Project
       </a>
     </div>
 
-    <!-- Secondary links — smaller, less visual weight -->
-    <div class="hero-secondary-links">
-      <a href="https://github.com/JIYA-YDV" target="_blank">
+    <!-- SECONDARY CTAs: Smaller, subordinate -->
+    <div class="hero-secondary">
+      <a href="https://github.com/JIYA-YDV" target="_blank" class="btn btn-outline btn-sm">
         <i class="fab fa-github"></i> GitHub
       </a>
-      <a href="mailto:jiyayadav102@gmail.com">
-        <i class="fas fa-envelope"></i> Email
+      <a href="#contact" class="btn btn-outline btn-sm">
+        <i class="fas fa-envelope"></i> Contact
       </a>
-      <a href="https://www.linkedin.com/in/jiyayadav" target="_blank">
-        <i class="fab fa-linkedin"></i> LinkedIn
-      </a>
-      <a href="#" id="resumeLink">
-        <i class="fas fa-file-pdf"></i> Download Resume
+      <a href="./Jiya_Yadav_Resume.pdf" target="_blank" class="btn btn-outline btn-sm">
+        <i class="fas fa-file-alt"></i> Resume
       </a>
     </div>
 
@@ -833,14 +775,11 @@
   </div>
 </section>
 
-<!-- ══════════════════════════════════════════════════════════
-     SKILLS SECTION — REMOVED (redundant with project stack chips)
-     ══════════════════════════════════════════════════════════ -->
+<!-- ══ SKILLS SECTION: REMOVED ══ -->
+<!-- Skills removed post-critique: redundant with project stack chips.
+     All skill tags are visible under each project's stack section. -->
 
-<!-- ══════════════════════════════════════════════════════════
-     PROJECTS — Now directly after Hero (shortest path to proof)
-     Dissertation updated with "available on request" note
-     ══════════════════════════════════════════════════════════ -->
+<!-- ══ PROJECTS (Now directly after Hero) ══ -->
 <section id="projects">
   <div class="container">
     <div class="reveal">
@@ -851,7 +790,7 @@
 
     <div class="projects-grid">
 
-      <!-- FEATURED PROJECT -->
+      <!-- FEATURED -->
       <div class="project-card featured reveal">
         <div class="project-featured-badge">
           <i class="fas fa-star"></i> Featured Project
@@ -893,7 +832,7 @@
         </div>
       </div>
 
-      <!-- PROJECT 2 — Dissertation (updated) -->
+      <!-- PROJECT 2: Dissertation — reframed -->
       <div class="project-card reveal">
         <h3 class="project-title">⚖️ Fair &amp; Explainable ML — Mental Health</h3>
         <p class="project-desc">
@@ -921,7 +860,7 @@
           </span>
         </div>
         <p class="project-note">
-          📄 Full paper available on request post-publication — currently under academic embargo pending results.
+          📄 Full paper available on request post-publication. Results expected Aug 2025.
         </p>
       </div>
 
@@ -984,10 +923,7 @@
   </div>
 </section>
 
-<!-- ══════════════════════════════════════════════════════════
-     EXPERIENCE — FlyRank updated with specifics,
-     GCG reframed with transferable quantitative skills
-     ══════════════════════════════════════════════════════════ -->
+<!-- ══ EXPERIENCE (GCG reframed, FlyRank date fixed) ══ -->
 <section id="experience">
   <div class="container">
     <div class="reveal">
@@ -1007,9 +943,9 @@
           <div class="timeline-company">FlyRank</div>
           <div class="timeline-desc">
             <ul>
-              <li>Building AI fluency workflows: task classification, prompt engineering, and AI-assisted development pipelines</li>
-              <li>Developing portfolio and documentation systems using Claude, ChatGPT, and Gemini as build partners</li>
-              <li>Completing structured 10-week AI fluency program with weekly deliverables and tracked progress</li>
+              <li>Building AI fluency workflows and integrating LLMs into production task pipelines</li>
+              <li>Developing prompt engineering frameworks and AI-assisted documentation systems</li>
+              <li>Contributing to internal AI tooling and workflow automation</li>
             </ul>
           </div>
         </div>
@@ -1019,15 +955,15 @@
         <div class="timeline-dot" style="background:var(--accent2)"></div>
         <div class="timeline-card">
           <div class="timeline-header">
-            <div class="timeline-title">Research &amp; Analytics Associate</div>
+            <div class="timeline-title">Data &amp; Research Analyst</div>
             <div class="timeline-period">May 2022 – May 2023</div>
           </div>
           <div class="timeline-company">GCG International LLC, Kathmandu</div>
           <div class="timeline-desc">
             <ul>
-              <li>Built quantitative KPI dashboards to track campaign performance across multiple channels</li>
-              <li>Conducted consumer behavior analysis using structured data to inform business strategy</li>
-              <li>Delivered data-driven reports that directly shaped marketing budget allocation decisions</li>
+              <li>Built quantitative KPI dashboards tracking campaign performance across channels</li>
+              <li>Conducted consumer behavior analysis on structured datasets to inform business strategy</li>
+              <li>Automated weekly reporting workflows, reducing manual data processing time</li>
             </ul>
           </div>
         </div>
@@ -1037,10 +973,7 @@
   </div>
 </section>
 
-<!-- ══════════════════════════════════════════════════════════
-     EDUCATION — "Results Awaited" reframed as expected date
-     Certifications de-emphasized as inline tags (not headlined)
-     ══════════════════════════════════════════════════════════ -->
+<!-- ══ EDUCATION (Results reframed, certs de-emphasized) ══ -->
 <section id="education">
   <div class="container">
     <div class="reveal">
@@ -1053,7 +986,7 @@
       <div class="edu-card reveal">
         <div class="edu-degree">MSc Information Technology (AI/ML)</div>
         <div class="edu-school">Leeds Beckett University via The British College, Kathmandu</div>
-        <div class="edu-period">Completed 2025 · Results expected Aug 2025</div>
+        <div class="edu-period">Completed — Results expected Aug 2025</div>
         <span class="edu-badge badge-info">AI/ML Specialisation</span>
       </div>
 
@@ -1066,85 +999,61 @@
 
     </div>
 
-    <!-- Certifications — de-emphasized as small inline tags -->
+    <!-- Certifications: de-emphasized as inline tags -->
     <div style="margin-top:2rem" class="reveal">
-      <p style="font-size:0.75rem; color:var(--muted); margin-bottom:0.75rem;">Certifications</p>
+      <p style="font-size:0.8rem; color:var(--muted); margin-bottom:0.75rem;">Certifications</p>
       <div class="certs-inline">
-        <span class="cert-small">Anthropic AI Fluency</span>
-        <span class="cert-small">Claude Code 101</span>
-        <span class="cert-small">HF Agents — Fundamentals</span>
-        <span class="cert-small">SQL for Data Analytics</span>
+        <span class="cert-mini">Anthropic — AI Fluency: Framework & Foundations</span>
+        <span class="cert-mini">Anthropic — Claude Code 101</span>
+        <span class="cert-mini">Hugging Face — Fundamentals of Agents</span>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ══════════════════════════════════════════════════════════
-     CONTACT — Email is primary, rest are small icon links
-     Phone number removed, form kept
-     ══════════════════════════════════════════════════════════ -->
+<!-- ══ CONTACT (Simplified: one primary, rest as icons) ══ -->
 <section id="contact">
   <div class="container">
     <div class="reveal">
       <p class="section-label">// get in touch</p>
       <h2 class="section-title">Let's <span>Connect</span></h2>
-      <p class="section-desc">Open to AI/ML engineering roles, remote or relocation worldwide.</p>
+      <p class="section-desc">Open to AI/ML engineering roles. Available for remote and relocation opportunities.</p>
     </div>
 
-    <div class="contact-wrapper">
-      <div class="contact-info reveal">
-        <h3>Reach out directly</h3>
-        <p>Based in Kathmandu, Nepal. Available immediately for remote roles.</p>
+    <div class="contact-content reveal">
 
-        <!-- ONE primary contact -->
-        <a href="mailto:jiyayadav102@gmail.com" class="contact-primary">
-          <i class="fas fa-envelope"></i>
-          jiyayadav102@gmail.com
+      <!-- Primary: Email -->
+      <div class="contact-primary">
+        <a href="mailto:jiyayadav102@gmail.com">
+          <i class="fas fa-envelope"></i> jiyayadav102@gmail.com
         </a>
-
-        <!-- Secondary — small icon links -->
-        <div class="contact-secondary">
-          <a href="https://github.com/JIYA-YDV" target="_blank" class="contact-icon-link" title="GitHub">
-            <i class="fab fa-github"></i>
-          </a>
-          <a href="https://www.linkedin.com/in/jiyayadav" target="_blank" class="contact-icon-link" title="LinkedIn">
-            <i class="fab fa-linkedin"></i>
-          </a>
-          <a href="https://huggingface.co/YDVJIYA" target="_blank" class="contact-icon-link" title="Hugging Face">
-            <i class="fas fa-cube"></i>
-          </a>
-        </div>
       </div>
 
-      <div class="contact-form reveal">
-        <form onsubmit="handleSubmit(event)">
-          <div class="form-group">
-            <label>YOUR NAME</label>
-            <input type="text" placeholder="Jane Smith" required />
-          </div>
-          <div class="form-group">
-            <label>YOUR EMAIL</label>
-            <input type="email" placeholder="jane@company.com" required />
-          </div>
-          <div class="form-group">
-            <label>MESSAGE</label>
-            <textarea placeholder="Hi Jiya, I'd love to discuss..." required></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center">
-            <i class="fas fa-paper-plane"></i> Send Message
-          </button>
-        </form>
+      <!-- Secondary: Small icon links -->
+      <div class="contact-secondary">
+        <a href="https://github.com/JIYA-YDV" target="_blank" class="contact-icon" title="GitHub">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/jiyayadav" target="_blank" class="contact-icon" title="LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://huggingface.co/YDVJIYA" target="_blank" class="contact-icon" title="Hugging Face">
+          <i class="fas fa-cube"></i>
+        </a>
       </div>
+
+      <p class="contact-note">
+        Based in Kathmandu, Nepal · Open to remote &amp; relocation worldwide
+      </p>
+
     </div>
   </div>
 </section>
 
-<!-- ══════════════════════════════════════════════════════════
-     FOOTER — "Aspiring" removed
-     ══════════════════════════════════════════════════════════ -->
+<!-- ══ FOOTER (Aspiring removed) ══ -->
 <footer>
   <p class="footer-text">
-    Built with ❤️ by <span>Jiya Yadav</span> &nbsp;·&nbsp;
+    Built by <span>Jiya Yadav</span> &nbsp;·&nbsp;
     AI/ML Engineer &nbsp;·&nbsp;
     Kathmandu, Nepal 🇳🇵
   </p>
@@ -1183,19 +1092,6 @@
         ? 'var(--text)' : '';
     });
   });
-
-  /* ── Form submit ── */
-  function handleSubmit(e) {
-    e.preventDefault();
-    const btn = e.target.querySelector('button');
-    btn.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
-    btn.style.background = '#22c55e';
-    setTimeout(() => {
-      btn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
-      btn.style.background = '';
-      e.target.reset();
-    }, 3000);
-  }
 </script>
 
 </body>

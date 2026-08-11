@@ -4,8 +4,28 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Jiya Yadav | AI/ML Engineer</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet"/>
+
+  <!-- Favicon (JY logo) -->
+  <link rel="icon" type="image/png" href="assets/images/brand/jiya-logo.png">
+  <link rel="apple-touch-icon" href="assets/images/brand/jiya-logo.png">
+
+  <!-- Open Graph / Social Share -->
+  <meta property="og:title" content="Jiya Yadav — AI/ML Engineer">
+  <meta property="og:description" content="Building end-to-end production ML systems. 0.89 macro F1 · 74% test coverage · MSc IT (AI/ML).">
+  <meta property="og:image" content="assets/images/brand/og-share.png">
+  <meta property="og:url" content="https://jiya-ydv.github.io/jiya-yadav.github.io/">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Jiya Yadav — AI/ML Engineer">
+  <meta name="twitter:description" content="Building end-to-end production ML systems.">
+  <meta name="twitter:image" content="assets/images/brand/og-share.png">
+
+  <!-- Fonts: Inter + JetBrains Mono (per identity kit) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
   <style>
     /* ── RESET & BASE ── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -51,7 +71,7 @@
     }
 
     .nav-logo {
-      font-family: 'Fira Code', monospace;
+      font-family: 'JetBrains Mono', monospace;
       font-size: 1.1rem;
       color: var(--accent);
       font-weight: 500;
@@ -135,7 +155,7 @@
       border: 1px solid rgba(124,58,237,0.3);
       border-radius: 999px;
       padding: 0.4rem 1rem;
-      font-family: 'Fira Code', monospace;
+      font-family: 'JetBrains Mono', monospace;
       font-size: 0.8rem;
       color: var(--accent2);
       margin-bottom: 1.5rem;
@@ -171,7 +191,7 @@
     }
 
     .hero-role {
-      font-family: 'Fira Code', monospace;
+      font-family: 'JetBrains Mono', monospace;
       font-size: clamp(1rem, 2.5vw, 1.25rem);
       color: var(--accent3);
       margin-bottom: 1.5rem;
@@ -224,7 +244,6 @@
       transform: translateY(-2px);
     }
 
-    /* secondary small buttons */
     .btn-sm {
       padding: 0.5rem 1rem;
       font-size: 0.8rem;
@@ -262,7 +281,7 @@
     .container { max-width: 1100px; margin: 0 auto; }
 
     .section-label {
-      font-family: 'Fira Code', monospace;
+      font-family: 'JetBrains Mono', monospace;
       font-size: 0.8rem;
       color: var(--accent2);
       letter-spacing: 0.15em;
@@ -306,6 +325,26 @@
       overflow: hidden;
     }
 
+    /* NEW: Project images */
+    .project-image {
+      width: calc(100% + 3.5rem);
+      margin: -1.75rem -1.75rem 1.5rem -1.75rem;
+      height: 200px;
+      object-fit: cover;
+      object-position: top;
+      border-bottom: 1px solid var(--border);
+      transition: transform 0.4s ease, opacity 0.3s ease;
+    }
+
+    .project-card:hover .project-image {
+      transform: scale(1.03);
+      opacity: 0.95;
+    }
+
+    .project-card.featured .project-image {
+      height: 340px;
+    }
+
     .project-card::before {
       content: '';
       position: absolute; top: 0; left: 0; right: 0;
@@ -314,6 +353,7 @@
       transform: scaleX(0);
       transform-origin: left;
       transition: transform 0.3s;
+      z-index: 2;
     }
 
     .project-card:hover::before { transform: scaleX(1); }
@@ -341,6 +381,7 @@
       margin-bottom: 1rem;
       letter-spacing: 0.05em;
       text-transform: uppercase;
+      align-self: flex-start;
     }
 
     .project-title {
@@ -380,7 +421,7 @@
     }
 
     .stack-tag {
-      font-family: 'Fira Code', monospace;
+      font-family: 'JetBrains Mono', monospace;
       font-size: 0.7rem;
       padding: 0.25rem 0.55rem;
       border-radius: 4px;
@@ -479,7 +520,7 @@
     .timeline-title { font-weight: 700; font-size: 1rem; }
 
     .timeline-period {
-      font-family: 'Fira Code', monospace;
+      font-family: 'JetBrains Mono', monospace;
       font-size: 0.75rem;
       color: var(--accent2);
       background: rgba(6,182,212,0.08);
@@ -545,7 +586,7 @@
     }
 
     .edu-period {
-      font-family: 'Fira Code', monospace;
+      font-family: 'JetBrains Mono', monospace;
       font-size: 0.75rem; color: var(--muted);
     }
 
@@ -569,14 +610,14 @@
       color: var(--accent2);
     }
 
-    /* ── CERTIFICATIONS (de-emphasized) ── */
+    /* ── CERTIFICATIONS ── */
     .certs-inline {
       display: flex; flex-wrap: wrap; gap: 0.5rem;
       margin-top: 1.5rem;
     }
 
     .cert-mini {
-      font-family: 'Fira Code', monospace;
+      font-family: 'JetBrains Mono', monospace;
       font-size: 0.7rem;
       padding: 0.25rem 0.6rem;
       border-radius: 4px;
@@ -600,6 +641,24 @@
       max-width: 600px;
       margin-left: auto;
       margin-right: auto;
+    }
+
+    /* NEW: Portrait in Contact */
+    .contact-portrait {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center top;
+      border: 3px solid var(--accent);
+      box-shadow: 0 0 32px rgba(124,58,237,0.35);
+      margin-bottom: 1.75rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .contact-portrait:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 42px rgba(124,58,237,0.55);
     }
 
     .contact-primary {
@@ -690,13 +749,16 @@
       .hamburger { display: flex; }
 
       .project-card.featured { grid-column: auto; }
+      .project-card.featured .project-image { height: 220px; }
+      .project-image { height: 170px; }
       .hero-stats { gap: 1.5rem; }
+      .contact-portrait { width: 110px; height: 110px; }
     }
   </style>
 </head>
 <body>
 
-<!-- ══ NAV (Skills removed, Projects first) ══ -->
+<!-- ══ NAV ══ -->
 <nav>
   <div class="nav-logo">jiya<span>.dev</span></div>
   <ul class="nav-links" id="navLinks">
@@ -711,7 +773,7 @@
   </div>
 </nav>
 
-<!-- ══ HERO (Aspiring removed, single dominant CTA, resume added) ══ -->
+<!-- ══ HERO ══ -->
 <section class="hero" id="about">
   <div class="hero-content">
     <div class="hero-badge">
@@ -733,7 +795,6 @@
       MSc IT (AI/ML) from Leeds Beckett University.
     </p>
 
-    <!-- PRIMARY CTA: One dominant action -->
     <div class="hero-btns">
       <a href="https://huggingface.co/spaces/YDVJIYA/mental-health-ai-platform"
          target="_blank" class="btn btn-primary">
@@ -741,7 +802,6 @@
       </a>
     </div>
 
-    <!-- SECONDARY CTAs: Smaller, subordinate -->
     <div class="hero-secondary">
       <a href="https://github.com/JIYA-YDV" target="_blank" class="btn btn-outline btn-sm">
         <i class="fab fa-github"></i> GitHub
@@ -775,11 +835,7 @@
   </div>
 </section>
 
-<!-- ══ SKILLS SECTION: REMOVED ══ -->
-<!-- Skills removed post-critique: redundant with project stack chips.
-     All skill tags are visible under each project's stack section. -->
-
-<!-- ══ PROJECTS (Now directly after Hero) ══ -->
+<!-- ══ PROJECTS ══ -->
 <section id="projects">
   <div class="container">
     <div class="reveal">
@@ -790,8 +846,11 @@
 
     <div class="projects-grid">
 
-      <!-- FEATURED -->
+      <!-- FEATURED: Mental Health AI -->
       <div class="project-card featured reveal">
+        <img src="assets/images/projects/project-mental-health-demo.png"
+             alt="Mental Health AI Platform live demo — emotion classification with 0.89 macro F1"
+             class="project-image">
         <div class="project-featured-badge">
           <i class="fas fa-star"></i> Featured Project
         </div>
@@ -832,8 +891,11 @@
         </div>
       </div>
 
-      <!-- PROJECT 2: Dissertation — reframed -->
+      <!-- PROJECT 2: Fair & Explainable ML -->
       <div class="project-card reveal">
+        <img src="assets/images/projects/msc-dissertation.png"
+             alt="Fair & Explainable ML dissertation methodology poster"
+             class="project-image">
         <h3 class="project-title">⚖️ Fair &amp; Explainable ML — Mental Health</h3>
         <p class="project-desc">
           MSc Dissertation. Interpretable ML pipeline predicting mental health treatment outcomes on
@@ -864,8 +926,11 @@
         </p>
       </div>
 
-      <!-- PROJECT 3 -->
+      <!-- PROJECT 3: E-Commerce -->
       <div class="project-card reveal">
+        <img src="assets/images/projects/e-commerce-clv-executive_summary.png"
+             alt="E-Commerce customer lifetime value RFM segmentation dashboard"
+             class="project-image">
         <h3 class="project-title">🛒 E-Commerce Customer Lifetime Value</h3>
         <p class="project-desc">
           End-to-end analytics on 393K+ transactions from a UK retailer (£7.2M revenue, 4.3K customers,
@@ -892,8 +957,11 @@
         </div>
       </div>
 
-      <!-- PROJECT 4 -->
+      <!-- PROJECT 4: ETL Pipeline -->
       <div class="project-card reveal">
+        <img src="assets/images/projects/ETL-pipeline.png"
+             alt="Automated ETL pipeline Airflow DAG graph"
+             class="project-image">
         <h3 class="project-title">🔄 Automated ETL Pipeline — Airflow &amp; PostgreSQL</h3>
         <p class="project-desc">
           Production ETL ingesting hourly weather data for 5 global cities via OpenWeatherMap API into
@@ -923,7 +991,7 @@
   </div>
 </section>
 
-<!-- ══ EXPERIENCE (GCG reframed, FlyRank date fixed) ══ -->
+<!-- ══ EXPERIENCE ══ -->
 <section id="experience">
   <div class="container">
     <div class="reveal">
@@ -973,7 +1041,7 @@
   </div>
 </section>
 
-<!-- ══ EDUCATION (Results reframed, certs de-emphasized) ══ -->
+<!-- ══ EDUCATION ══ -->
 <section id="education">
   <div class="container">
     <div class="reveal">
@@ -999,7 +1067,6 @@
 
     </div>
 
-    <!-- Certifications: de-emphasized as inline tags -->
     <div style="margin-top:2rem" class="reveal">
       <p style="font-size:0.8rem; color:var(--muted); margin-bottom:0.75rem;">Certifications</p>
       <div class="certs-inline">
@@ -1011,7 +1078,7 @@
   </div>
 </section>
 
-<!-- ══ CONTACT (Simplified: one primary, rest as icons) ══ -->
+<!-- ══ CONTACT (Portrait added) ══ -->
 <section id="contact">
   <div class="container">
     <div class="reveal">
@@ -1022,14 +1089,17 @@
 
     <div class="contact-content reveal">
 
-      <!-- Primary: Email -->
+      <!-- NEW: Portrait -->
+      <img src="assets/images/portrait/jiya-portrait.jpg"
+           alt="Jiya Yadav — AI/ML Engineer"
+           class="contact-portrait">
+
       <div class="contact-primary">
         <a href="mailto:jiyayadav102@gmail.com">
           <i class="fas fa-envelope"></i> jiyayadav102@gmail.com
         </a>
       </div>
 
-      <!-- Secondary: Small icon links -->
       <div class="contact-secondary">
         <a href="https://github.com/JIYA-YDV" target="_blank" class="contact-icon" title="GitHub">
           <i class="fab fa-github"></i>
@@ -1050,7 +1120,7 @@
   </div>
 </section>
 
-<!-- ══ FOOTER (Aspiring removed) ══ -->
+<!-- ══ FOOTER ══ -->
 <footer>
   <p class="footer-text">
     Built by <span>Jiya Yadav</span> &nbsp;·&nbsp;
@@ -1061,7 +1131,6 @@
 
 <!-- ══ JS ══ -->
 <script>
-  /* ── Scroll Reveal ── */
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => {
       if (e.isIntersecting) {
@@ -1073,12 +1142,10 @@
 
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-  /* ── Mobile Nav ── */
   function toggleMenu() {
     document.getElementById('navLinks').classList.toggle('open');
   }
 
-  /* ── Active nav link on scroll ── */
   const sections = document.querySelectorAll('section[id]');
   const navLinks = document.querySelectorAll('.nav-links a');
 
